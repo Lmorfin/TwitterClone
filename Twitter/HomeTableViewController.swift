@@ -16,16 +16,21 @@ class HomeTableViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        loadTweets()
-
+      //  loadTweets()
+       //self.tweetArray.rowHeight = UITableView.automaticDimension
+        //self.tweetArray.estimatedRowHeight = 120
+        
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        self.loadTweets()
     }
     
     func loadTweets() {
         
         let myUrl = "https://api.twitter.com/1.1/statuses/home_timeline.json"
-        
         numberOfTweets = 20
-        
         let myParam = ["count": numberOfTweets]
         
         //dictionaries
@@ -76,7 +81,9 @@ class HomeTableViewController: UITableViewController {
             cell.profileImageView.image = UIImage(data: imageData)
         }
         
-        
+        cell.setFavorite(isFavorited: tweetArray[indexPath.row]["favorited"] as! Bool)
+        cell.tweetId = tweetArray[indexPath.row]["id"] as! Int
+        cell.setRetweeted(isRetweeted: tweetArray[indexPath.row]["retweeted"] as! Bool)
         return cell
     }
     
