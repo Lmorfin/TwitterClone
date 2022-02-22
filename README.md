@@ -20,7 +20,6 @@ The following **bonus** features are implemented:
 
 ## Video Walkthrough
 
-Here's a walkthrough of implemented user stories:
 ![ezgif com-gif-maker (8)](https://user-images.githubusercontent.com/44296149/155188411-9c2ad6ac-0c12-4886-928a-00215449a8f4.gif)
 
 
