@@ -14,10 +14,7 @@ class TweetCellTableViewCell: UITableViewCell {
     @IBOutlet weak var profileImageView: UIImageView!
     @IBOutlet weak var userNameLabel: UILabel!
     @IBOutlet weak var tweetContent: UILabel!
-    
     @IBOutlet weak var retweetButton: UIButton!
-    
-    
     @IBOutlet weak var favButton: UIButton!
     
     var favorited:Bool = false
@@ -67,10 +64,7 @@ class TweetCellTableViewCell: UITableViewCell {
                 print("Error unfavorting...")
             })
         }
-        
     }
-    
-    
  
     @IBAction func retweet(_ sender: Any) {
         TwitterAPICaller.client?.retweet(tweetId: tweetId, success: {
@@ -83,7 +77,6 @@ class TweetCellTableViewCell: UITableViewCell {
     
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
         // Configure the view for the selected state
     }
 
